@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function F1()
+        {//load,get,post
+            $.ajax({
+                url:'vd2.php',
+                type:'GET',//Mac dinh Get
+                dataType:'json',//mac dinh la text
+                data:'kw='+$('#kw').val(),//mac dinh rong
+                //data:(kw:$(#kw).val())
+                success:function(dataReturn){
+                    console.log(dataReturn);
+                    $('#resulti').html('')//xoa
+                    $.each(dataReturn,function(k,v){
+                        var s=`<div>
+                                    ${v.book_id}-${v.book_name}
+                                    -${v.prive}
+                                    </div>`;
+                        if(v.price81<50000)
+                                    $('$result1').append(s);
+                                else $('$result2').append(s);
+                    });
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    keyword <input type="text" id="kw">
+    <input type="button" value="Search" onclick="F1()">
+    <div id="result1"></div><hr>
+    <div id="result2"></div>
+</body>
+</html>

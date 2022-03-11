@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+html, body{
+	width: 100%;
+	height: 100%;
+	font-family: "Josefin Sans";
+	font-size:25px;
+	color:#222;
+}
+
+.navbar{
+	background-color: red !important;
+}
+.navbar li a {
+	color:white !important;
+}
+.navbar li a:hover {
+	color:black !important;
+}
+.carousel-inner img {
+	height: 30%;
+	width: 100%;
+}
+.carousel-caption{
+	position: absolute;
+	top:50%;
+	height: 10px
+
+}
+.carousel-caption h1 {
+	color:red;
+}
+@media (max-width: 992px){
+	
+	.carousel-caption{
+	position: absolute;
+	top:50%;
+
+
+}
+}
+@media (max-width: 768px){
+	
+	.carousel-caption{
+	font-size:250%;
+
+}
+}
+@media (max-width: 576px){
+	
+
+	.carousel-caption{
+		font-size:250%;
+}
+}
+.welcome hr{
+	border-top:5px solid rgb(62,44,200);
+	width=95%;
+	margin-bottom:2rem;
+}
+.footer {
+     background-color: #051108;
+     text-align: center;
+     font-family: poppins;
+}
+.footer .headinga h3 {
+     
+     font-size: 38px;
+    display: block;
+    color: white;
+    max-width: 850px;
+    padding-bottom: 1px;
+    border-bottom: #fff solid 1px;
+    text-align: center;
+    margin: 0 auto;
+     margin-bottom: 0px;
+    margin-bottom: 30px;
+
+}
+.footer .headinga span {
+     
+     font-size: 17px;
+     display: block;
+     color: #fff;
+     padding-top: 10px;
+     padding-bottom: 5px;
+}
+
+.footer .headinga p {
+     
+     font-size: 17px;
+     display: block;
+     color: #fff;
+     line-height: 30px;
+}
+.footer .headinga p a
+{
+	color: #fff;
+}
+ul.link li {
+     display: inline-block;
+     padding: 8px 15px;
+     
+     
+}
+ul.link li a {
+     color: #fff;
+     font-size: 17px;
+     
+}
+ul.link li a:hover {
+     color: #ff0000;
+}
+.container-fluid a
+{
+	color: red;
+}
+.container-fluid a:hover
+{
+	color: black;
+	text-decoration: none;
+}
+btn-primary.focus,
+.btn-primary:focus {
+     box-shadow: inherit;
+}
+.copyright {
+     background: #fff;
+     padding: 20px 0px 20px 0;
+     margin-top: 50px;
+}
+.copyright p {
+     color: #000;
+     font-size: 16px;
+     text-align: center;
+     text-align: center;
+     margin: 0 auto;
+}
+.copyright a {
+     color: #000;
+}
+.copyright a:hover {
+     color: #ff0000;
+}
+.about
+{
+	width: 50%;
+}
+.about .about_box 
+{
+	float: left;
+	margin: right;
+}

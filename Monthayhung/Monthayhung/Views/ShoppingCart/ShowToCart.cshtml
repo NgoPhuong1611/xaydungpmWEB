@@ -1,0 +1,121 @@
+﻿@model GioHang2.Models.Cart
+
+@{
+    ViewBag.Title = "ShowToCart";
+    Layout = "~/Views/GioHang.cshtml";
+
+
+}
+@if (Model != null)
+{
+<div class="main-banner" id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <div class="heading">
+                    <h1>
+                        <span class="shopper">Shopping Cart</span>
+                    </h1>
+                </div>
+
+                <div class="cart transition is-open">
+                    <div class="table">
+
+                        <div class="layout-inline row th">
+                            <div class="col col-pro">Product</div>
+                            <div class="col col-price align-center ">
+                                Price
+                            </div>
+                            <div class="col col-qty align-center">Number</div>
+                            <div class="col">Introduce</div>
+                            <div class="col">Total</div>
+                        </div>
+                        <hr />
+                        @foreach (var c in Model.Items)
+                        {
+                            double total = Convert.ToDouble(c._shoppingSP.Gia * c._shoppingQuantity);
+                            double sumTotal = 0;
+                            <div class="layout-inline row">
+
+                                <div class="col col-pro layout-inline">
+                                    <img width="80px" height="80px" src="~/Content/assets/images/@c._shoppingSP.Anhsp" alt="kitten" />
+                                    <p>@Html.DisplayFor(model => c._shoppingSP.Tensp)</p>
+                                </div>
+
+                                <div class="col col-price col-numeric align-center " style="margin-top:40px">
+                                    <p>@Html.DisplayFor(model => c._shoppingSP.Gia) Đ</p>
+                                </div>
+
+                                <div class="col col-qty layout-inline" style="margin-top:40px">
+                                    @using (Html.BeginForm("UpdateToCart", "ShoppingCart"))
+                                    {
+                                        <input type="hidden" value="@Html.DisplayFor(model => c._shoppingSP.Masp)" name="id_product" />
+                                        <input type="number" value="@c._shoppingQuantity" name="quantity_product" />
+                                        <input type="submit" value="Update Quantity" />
+                                    }
+
+                                </div>
+
+                                <div class="col col-vat col-numeric" style="margin-top:40px">
+                                    <p>@Html.DisplayFor(model => c._shoppingSP.Gioithieu)</p>
+                                </div>
+                                <div class="col col-total col-numeric" style="margin-top:40px">
+                                    <p> @total</p>
+
+                                </div>
+                            </div>
+                        }
+                        <hr />
+                        <div class="tf">
+
+                            <div class="row layout-inline">
+                                <div class="col">
+                                    <p><b>Total :</b>@Model.SumTotal() Đ</p>
+                                </div>
+                                <div class="col">
+
+                                </div>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("Payment", "ShoppingCart"))
+                        {
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>Code Customer:</td>
+                                    <td><input type="text" name="codeuser" /></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>Delivery date:</td>
+                                    <td><input type="date" name="ddate" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Note:</td>
+                                    <td><textarea rows="4" cols="50" name="note" >Enter text here...</textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><input style="color:royalblue" type="submit" name="update" value="Payment" /></td>
+                                    <td><button><a style="color:royalblue" href="@Url.Action("Index", "Home")">Mua thêm</a></button></td>
+                                    </tr>
+                                   
+                            </table>
+                        </form>
+                        
+                        
+                        }
+
+                    </div>
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+
+
+
+

@@ -1,0 +1,67 @@
+﻿@model Webbangiay.Models.Sanpham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Sanpham</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tensp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tensp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mathuonghieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mathuonghieu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gioithieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gioithieu)
+        </dd>
+
+        <dt>
+           <img src="@Url.Content(Model.Anhsp)" style="height:200px; width:200px; margin:10px"/>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anhsp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Masp.Replace(" ", "") }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

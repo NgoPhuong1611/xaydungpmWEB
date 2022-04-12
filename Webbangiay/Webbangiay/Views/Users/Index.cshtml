@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Webbangiay.Models.Users>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tentk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loaitk)
+        </th>
+      
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tentk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loaitk)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Matk.Replace(" ","") }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Matk.Replace(" ", "") }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Matk.Replace(" ", "") })
+        </td>
+    </tr>
+}
+
+</table>

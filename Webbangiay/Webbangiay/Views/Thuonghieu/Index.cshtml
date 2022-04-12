@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Webbangiay.Models.Thuonghieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mathuonghieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenthuonghieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quocgia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mota)
+        </th>
+        <th> Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mathuonghieu)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Tenthuonghieu)
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Quocgia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mota)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Mathuonghieu.Replace(" ", "") }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Mathuonghieu.Replace(" ", "") }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Mathuonghieu.Replace(" ", "") })
+    </td>
+</tr>
+}
+
+</table>

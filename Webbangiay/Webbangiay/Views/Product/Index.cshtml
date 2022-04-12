@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Webbangiay.Models.Sanpham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Masp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tensp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mathuonghieu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gioithieu)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Masp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tensp)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mathuonghieu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gia)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gioithieu)
+    </td>
+  
+    <td>
+        @Html.DisplayFor(modelItem => item.Size)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Masp.Replace(" ","") }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Masp.Replace(" ", "") }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Masp.Replace(" ", "") })
+    </td>
+</tr>
+}
+
+</table>

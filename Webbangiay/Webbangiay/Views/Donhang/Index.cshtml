@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Webbangiay.Models.Dathang>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Madonhang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Users.Tentk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaytao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soluong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaygiaodukien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tinhtrang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ghichu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Madonhang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Users.Tentk)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaytao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Soluong)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ngaygiaodukien)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tinhtrang)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ghichu)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Madonhang.Replace(" ","") }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Madonhang.Replace(" ","") }) 
+    </td>
+</tr>
+}
+
+</table>
